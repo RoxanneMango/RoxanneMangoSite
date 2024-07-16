@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<header>
+		<link rel="stylesheet" href="style.css">
+	</header>
+
+	<h3>C_Lingo Webserver</h3>
+	<hr/>
+	<img src="assets/c_lingo_ui.png" style="width: 30em; height: auto; float:right; padding-left: 1em;"/>
+	<p>
+		C_Lingo is a C webserver with a minimal frontend that allows you 
+		to play the game Lingo in the browser. The frontend consists of a simple HTML/CSS/Javascript stack. 
+		The webserver code is written for Linux (no support for Windows or Mac environments). 
+		For the sockets the arpa/inet.h library was used; for the multithreading the pthread library.
+		</br>
+		The C_Lingo back-end code can be divided into two parts: The lingo_words command line 
+		application code, and the lingo server code. All the building of the code is automated via Makefiles.		
+	</p>
+	<a href="https://github.com/RoxanneMango/C_Lingo">[ link to the Github repository ]</a>
+	<h4>LingoWords CLI application</h4>
+	<p>
+		Lingo_words is a C Command Line Interface (CLI) application used for 
+		gathering words with five, six, and seven letters. It saves the words in their respective 
+		.txt files. The lingo server code depends on lingo_words for its supply of words.
+	</p>				
+	<hr>
+	<img src="assets/c_lingo_cli_output.png" style="width: 100%; height: auto; float:right; padding-left: 1em;"/>
+	<hr>
+	<h4>Test suite</h4>
+	<p>
+		As part of its test suite there is a test double and a C program that performs a static code analysis. The 
+		static code analysis counts the amounts of calloc() calls vs the amount of free() calls. If the two are not 
+		equal the test will fail.
+	</p>
+	<h4>Makefile:</h4>
+	<pre class="code"><code class="code">
+CC = gcc
+CFLAGS = -Wall -static -O3
+
+OBJECTS = tests.o net_test.o file_test.o mem_test.o
+EXEC = main
+
+.PHONY: all clean run
+
+all: $(OBJECTS)
+	$(CC) -o $(EXEC) main.c $(OBJECTS) $(CFLAGS)
+
+$(OBJECTS): %.o: %.c
+	$(CC) -c $(CFLAGS) $&lt -o $@
+
+clean:
+	@rm *.o
+	@rm $(EXEC)
+
+run:
+	@./$(EXEC)
+	</code></pre>
+</html>

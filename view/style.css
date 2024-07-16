@@ -1,0 +1,123 @@
+* {
+	font-family: monospace;
+	background: black;
+	user-select: none;
+	color: #07cc00;
+	font-weight: bold;
+	font-size: 1.2vw;
+}
+h4 {
+	font-size: 1.5vw;
+	color: #07cc00;
+	text-decoration: underline;
+}
+h3 {
+	font-size: 2vw;
+	color: lime;
+	margin-top: 0;
+}
+h2 {
+	font-size: 4vw;
+	width: 50%;
+	border: 3px groove #cfcfcf;
+	padding: 0.2em 0;
+	margin: auto;
+}
+h1 {
+	font-size: 6vw;
+}
+
+#MainContent {
+	width: 66%;
+	margin: auto;
+}
+
+@media only screen and (max-width: 500px) {
+	#MainContent {
+		width: 90%; 
+		margin: auto;
+	}
+}
+
+#NavigationTabMenu {
+	width: 50%;
+	height: 3vw;
+}
+
+#ProjectsList {
+	margin: -0.4em;
+	padding: 1em;
+	padding-bottom: 1em;
+}
+#ProjectsList li {
+	padding-bottom: 0.5em;
+}
+
+
+.container {
+	width: 100%;
+	height: auto;
+}
+
+.divider td {
+	border-top: 0.4em dashed #192a45;
+	padding-top: 1em;
+	border-bottom: 0.4em dashed #192a45;
+	padding-bottom: 1em;
+}
+
+.divider tr {
+}
+
+#NavigationTabMenu td {
+	width: 10vw;
+	height: 1vw;
+	background-color: transparent;
+	border: 1px solid gray;
+	text-align: center;
+}
+.blockhref {
+	display: block;
+	height: auto;
+	text-decoration: none;
+	background-color: transparent;
+}
+
+.preview_card {
+	display: block;
+	border: 0.4em dashed #192a45;
+	border-radius: 0.2em;
+	background-color: black;
+	padding: 1em;
+	margin-top: -0.7em;
+}
+.preview_card:hover {
+	border: 0.4em dashed #1d355c;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+a {
+	color: #349beb;
+	text-decoration: none;
+}
+a:hover {
+	color: #3aa7fc;
+	text-decoration: underline;	
+}
+
+hr {
+	width: 100%;
+	border: 1px dashed green;
+	border-radius: 5px;
+}
+
+p {
+	text-align: justify;
+	text-justify: inter-word;
+}
+
+.code {
+	color: #6d9473;
+	font-size: 1em;
+}

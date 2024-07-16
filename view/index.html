@@ -1,29 +1,134 @@
 <!DOCTYPE HTML>
 <head>
 	<title>RoxanneMango</title>
-	<style>
-		* {
-			font-family: monospace;
-			background: black;
-			user-select: none;
-			color: green;
-			text-align: center;
-			font-weight: bold;
-		}
-		h2 {
-			font-size: 4vw;
-			width: 50%;
-			padding: 20px;
-			border: 3px groove #cfcfcf;
-			margin: auto;
-		}
-		h1 {
-			font-size: 6vw;
-		}
-	</style>
+	<link rel="stylesheet" href="style.css">
+	<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="includeHTML.js"></script>
 </head>
 <body>
-	<h2>RoxanneMango</h2>		
-	<h1>Hello world!</h1>
+	<a id="top"></a>
+
+	<!-- page banner and navigation buttons -->
+	<div data-include="header"></div>
+	
+	<div id="MainContent">
+	
+	<table width="100%">
+		<tr>
+			<td>
+				<h3 style="margin-top: 1em;">Hello world!</h3>			
+				<p>
+					My name is Roxanne. I'm a programmer who likes making stuff. I once started programming
+					in Python and sucked at it. Then I started programming in C and it all made sense.
+					Nowadays my Python skills are decent, although C/C++ is still my goto language.
+					<br/>
+					Some of my favorite projects to work on are OS dev, netcode, and game development. Anything
+					C/C++ related will spark joy, really. I like the language's simplicity and ability to 
+					interface more closely to the hardware. Inline assembly is also pretty chill.
+				</p>
+				<p>
+					My frontend skills are not the greatest, that is why the site looks like this. It reminds me
+					of a terminal. It sparks joy. Below I'll showcase some of the things I have worked on over 
+					the years. Projects are mainly written in C/C++, but I try to slip in the occasional
+					Python and assembly code.
+				</p>
+			</td>
+		</tr>
+	</table>
+
+	<table class="container">
+		<colgroup>
+			<col width="10%"><col width="10%"><col width="10%"><col width="10%"><col width="10%">
+			<col width="10%"><col width="10%"><col width="10%"><col width="10%"><col width="10%">
+		</colgroup>
+
+		<!-- C_Lingo webserver -->
+		<tr>
+			<td colspan="6" style="margin: 0; padding: 0;">
+			<a href="projects.html#C_Lingo" class="preview_card">
+				<div style="float:right; margin-top: 0.5em; color: #349beb;">[ click me ]</div>
+				<h3>C_Lingo Webserver</h3>
+				<hr>
+				<p>
+					A C webserver with a minimal frontend that allows you to play the game Lingo 
+					in the browser. The frontend consists of HTML/CSS/Javascript. The webserver code 
+					is written for Linux.
+				</p>
+				<hr>
+				<img width="100%" height="auto" src="assets/c_lingo_ui.png"/>
+				<hr>
+			</a>
+			</td>
+		</tr>
+
+		<!-- BlackJaC++ webserver -->		
+		<tr>
+			<td td colspan="4"></td>
+			<td colspan="6">
+			<a href="projects.html#BlackJaC++" class="preview_card">
+				<div style="float:right; margin-top: 0.5em; color: #349beb;">[ click me ]</div>
+				<h3>BlackJaC++ Webserver</h3>	
+				<hr>
+				<p>
+					A C++ webserver with a database and minimal frontend that allows you to play the game Blackjack 
+					in the browser. The frontend consists of HTML/CSS/Javascript. The webserver code 
+					is cross-platform: It works for both Windows and Linux.
+				</p>
+				<hr>
+				<img width="100%" height="auto" src="assets/blackjack_pp_ui.png"/>
+				<hr>
+			</a>
+			</td>
+		</tr>
+		<!-- adkit arduino due toolchain -->
+		<tr>
+			<td colspan="6">
+			<a href="projects.html#adkit" class="preview_card">
+				<div style="float:right; margin-top: 0.5em; color: #349beb;">[ click me ]</div>
+				<h3>Adkit</h3>
+				<hr>
+				<p>
+					A cross-platform development toolchain (Windows and Linux) for the Arduino Due for lower level 
+					development than the standard Arduino IDE allows. Contains the gcc C/C++ cross-compiler; the 
+					flashing tool Bossac; and several C/C++/ASM examples.
+				</p>
+				<hr>
+				<img width="100%" height="auto" src="assets/adkit_makefile.png"/>
+				<hr>
+				</a>
+			</td>
+		</tr>
+
+		<!-- J_S_R_ogue IOCCC game -->
+		<tr>
+			<td colspan="4">
+			<td colspan="6">
+			<a href="projects.html#J_S_R_ogue" class="preview_card">
+				<div style="float:right; margin-top: 0.5em; color: #349beb;">[ click me ]</div>
+				<h3>J_S_R_ogue</h3>
+				<hr>
+				<p>
+					A rogue-like dungeon crawler written in obfuscated C. Written with two others. Collect coins and
+					evade enemies as you go down the 100 procedurally generated cave levels. Originally made for 
+					the International Obfuscated C Code Contest (IOCCC).
+				</p>
+				<hr>
+				<img width="100%" height="auto" src="assets/J_S_R_ogue.png"/>
+				<hr>
+			</a>
+			</td>
+		</tr>
+
+	</table>
+	
+	<hr style="margin-top: 2em;">
+	<br>
+	<center><a href="#top">[ Back to top ]</a></center>
+	<br>
+
+	</div>
+	
 </body>
 </html>
