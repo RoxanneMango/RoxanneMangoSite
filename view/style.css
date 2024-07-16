@@ -19,7 +19,7 @@ h3 {
 h2 {
 	font-size: 4vw;
 	width: 50%;
-	border: 3px groove #cfcfcf;
+	border: 3px solid #cfcfcf;
 	padding: 0.2em 0;
 	margin: auto;
 }
