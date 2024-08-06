@@ -1,7 +1,7 @@
 * {
 	font-family: monospace;
 	background: transparent;
-	user-select: none;
+/*	user-select: none; */
 	color: #07cc00;
 	font-weight: bold;
 	font-size: 1.2vw;
