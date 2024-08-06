@@ -10,37 +10,38 @@
 		A python3 webserver with HTML/CSS/JS frontend and MySQL database support. The webserver code is written 
 		for Linux but can run on windows as well. The main compatibility issues on windows are with the commands 
 		used in the Makefile (they are Linux specific). Fixing this problem is for a future update.
-		</br>
+		<br>
+		<br>
 		When starting the python script the server will attempt to connect to the MySQL database defined in the code 
 		(this should probably be moved to a config file of sorts ...). If the server cannot connect to the database it 
 		will terminate. After the backend has instantiated and successfully connected to the database, it will start 
 		the interactive console. The console has a few simple commands like 'help', 'reload', 'and shutdown/exit'. Then, 
 		as the last step the backend will start serving on the ip:port defined in the makefile. 
-		</br>
-		</br>
+		<br>
+		<br>
 		<a href="https://github.com/RoxanneMango/Python3WebServer">[ link to the Github repository ]</a>
-		</br>
+	</p>
 		<hr>
 		<img src="assets/py3webserverConsole.png" style="width: 100%; height: auto;"/>
 		<hr>
-		</br>
+	<p>
 		If the port is equal to 443 it will attempt 
 		to serve over HTTPS instead of HTTP, and use the SSL certificate and public key supplied in the config 
 		folder of the repository. You will need to supply this certificate and key yourself which requires you to 
 		have a valid domain name. It is possible to generate your SSL cert and key with Certbot, for example.
-		</br>
+		<br>
+		<br>
 		The frontend is minimal but it 
 		does allow the user to authenticate themselves via the login portal. When successfully logged in, the 
 		server will keep track of the session using cookies for a limited amount of time, after which the cookies 
 		expire and the user is logged out again.
-		</br>		</br>
+		<br>
+	</p>
 		<hr>
 		<img src="assets/py3webserverindex.png" style="width: 100%; height: auto;"/>
 		<hr>
-	</p>
-	<h4>Makefile:</h4>
-	<pre class="code"><code class="code">
-.PHONY: test prod kill
+	<u><p>Makefile:</p></u>
+	<pre class="code"><code class="code">.PHONY: test prod kill
 
 IP = 127.0.0.1
 PORT = 443
@@ -52,6 +53,5 @@ test:
 prod:
 	nohup sudo python3 py3Backend.py $(IP) $(PORT) &
 kill:
-	sudo pkill python3
-	</code></pre>
+	sudo pkill python3</code></pre>
 </html>
