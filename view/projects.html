@@ -19,115 +19,13 @@
 		<tr>
 			<td>
 				<h3 style="margin:1em 0 0 0;">My projects:</h3>
-				<ul id="ProjectsList">
-					<li>
-						<a href="#FrankenPatch_game">FrankenPatch C++ Game</a>
-					</li>
-					<li>
-						<a href="#C_Lingo">C_Lingo Webserver</a>
-					</li>
-					<li>
-						<a href="#BlackJaC++">BlackJaC++ Webserver</a>
-					</li>
-					<li>
-						<a href="#Python3_webserver">Python3 Webserver</a>
-					</li>
-					<li>
-						<a href="#adkit">adkit Arduino Due Toolchain</a>
-					</li>					
-					<li>
-						<a href="#J_S_R_ogue">J_S_R_ogue Obfuscated C Game</a>
-					</li>
-					<li>
-						<a href="#Breadboard_prototyping">Breadboard Prototypes</a>
-					</li>
-					<li>
-						<a href="#RISC_V_Linux_port">RISC-V GNU/Linux</a>
-					</li>
-					<li>
-						<a href="#ITerrorist_game">ITerrorist C++ Game</a>
-					</li>						
+				<ul id="ProjectsList">	
 				</ul>
 			</td>
 		</tr>
 	</table>
 
-	<table class="container divider">
-		<!-- Frankenpatch game -->
-		<tr>
-			<td>
-				<a id="FrankenPatch_game"></a>
-				<a href="#top" style="float:right; margin-top: 0.5em;">[ Back to top ]</a>
-				<div style="color:yellow; float:right; font-size:1em; margin: 0.5em 1em;">[ On-going ]</div>
-				<div data-include="FrankenPatch"></div>
-			</td>
-		</tr>
-		<!-- C_Lingo webserver -->
-		<tr>
-			<td>
-				<a id="C_Lingo"></a>
-				<a href="#top" style="float:right; margin-top: 0.5em;">[ Back to top ]</a>
-				<div data-include="C_Lingo"></div>
-			</td>
-		</tr>
-		<!-- BlackJaC++ webserver -->
-		<tr>
-			<td>
-				<a id="BlackJaC++"></a>
-				<a href="#top" style="float:right; margin-top: 0.5em;">[ Back to top ]</a>
-				
-				<div data-include="blackjacpp"></div>
-			</td>
-		</tr>
-		<!-- Python3 webserver -->
-		<tr>
-			<td>
-				<a id="Python3_webserver"></a>
-				<a href="#top" style="float:right; margin-top: 0.5em;">[ Back to top ]</a>
-				<div data-include="Python3WebServer"></div>
-			</td>
-		</tr>
-		<!-- adkit arduino due toolchain -->		
-		<tr>	
-			<td>
-				<a id="adkit"></a>
-				<a href="#top" style="float:right; margin-top: 0.5em;">[ Back to top ]</a>
-				<div data-include="adkit"></div>
-			</td>
-		</tr>
-		<!-- J_S_R_ogue IOCCC game -->		
-		<tr>
-			<td>
-				<a id="J_S_R_ogue"></a>
-				<a href="#top" style="float:right; margin-top: 0.5em;">[ Back to top ]</a>
-				<div data-include="J_S_R_ogue"></div>
-			</td>
-		</tr>
-		<!-- RISC-V Linux Port -->		
-		<tr>
-			<td>
-				<a id="RISC_V_Linux_port"></a>
-				<a href="#top" style="float:right; margin-top: 0.5em;">[ Back to top ]</a>
-				<div data-include="RISC_V_LinuxPort"></div>
-			</td>
-		</tr>
-		<!-- Breadboard Prototype -->		
-		<tr>
-			<td>
-				<a id="Breadboard_prototyping"></a>
-				<a href="#top" style="float:right; margin-top: 0.5em;">[ Back to top ]</a>
-				<div data-include="Breadboard_Prototyping"></div>
-			</td>
-		</tr>
-		<!-- ITerrorist C++ Game -->		
-		<tr>
-			<td>
-				<a id="ITerrorist_game"></a>
-				<a href="#top" style="float:right; margin-top: 0.5em;">[ Back to top ]</a>
-				<div data-include="ITerroristGame"></div>
-			</td>
-		</tr>		
-
+	<table id="Projects" class="container divider">
 	</table>
 
 	<br>
@@ -137,4 +35,49 @@
 	</div>
 	
 </body>
+
+<script>
+	window.onload = buildProjects();
+
+	function addProject(ID, page, title, description, isInProgress = false)
+	{
+		const col = document.createElement('td');		
+		col.innerHTML += "<a id=" + ID + "></a>";
+		col.innerHTML += "<a href=\"#top\" style=\"float:right; margin-top: 0.5em;\">[ Back to top ]</a>";
+		if(isInProgress)
+		{
+			col.innerHTML += "<div style=\"color:yellow; float:right; font-size:1em; margin: 0.5em 1em;\">[ On-going ]</div>";
+		}
+		col.innerHTML += "<div data-include=" + page + "></div>";
+				
+		const row = document.createElement('tr');
+		row.appendChild(col);
+
+		let projects = document.getElementById("Projects");
+		projects.innerHTML += "<!-- " + description + " -->";
+		projects.appendChild(row);
+
+		const li = document.createElement('li');
+		li.innerHTML += "<a href=\"#" + ID + "\">" + title + "</a>";
+
+		let projectsList = document.getElementById("ProjectsList");
+		projectsList.appendChild(li);
+	}
+	
+	function buildProjects()
+	{
+		let inProgress = true;
+		// ID, data-include, title, comment desc, inProgress=false
+		addProject("FrankenPatch_game", "FrankenPatch", "FrankenPatch C++ Game", "FrankenPatch Game", inProgress);
+		addProject("Python3_webserver", "Python3WebServer", "Python3 Web Server", "Python3 webserver");
+		addProject("BlackJaC++", "blackjacpp", "BlackJaC++ Web Server", "BlackJaC++ webserver");
+		addProject("C_Lingo", "C_Lingo", "C_Lingo Web Server", "C_Lingo webserver");
+		addProject("adkit", "adkit", "Adkit Arduino Due Toolchain", "adkit arduino due toolchain");
+		addProject("J_S_R_ogue", "J_S_R_ogue", "J_S_R_ogue IOCCC game", "J_S_R_ogue IOCCC game");
+		addProject("RISC_V_Linux_port", "RISC_V_LinuxPort", "RISC-V Linux Port", "RISC-v Linux Port");
+		addProject("Breadboard_prototyping", "Breadboard_Prototyping", "Breadboard Prototypes", "Breadboard Prototype");
+		addProject("ITerrorist_game", "ITerroristGame", "ITerrorist C++ Game", "ITerrorist C++ Game");
+	}
+</script>
+
 </html>
